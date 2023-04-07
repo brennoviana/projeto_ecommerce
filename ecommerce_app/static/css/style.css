@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -10,38 +10,37 @@
     --black: rgb(0, 0, 0);
     --white: rgb(255, 255, 255);
     --black-2: rgb(0, 0, 0);
-  }
+}
 
 
 /* HEADER */
 
-.header-main{
+.header-main {
     background-color: var(--black);
     min-width: 1700px;
     min-height: 120px;
-    box-shadow: 0 0 1.5rem;
 }
 
-.nav-main{
+.nav-main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 12vh;
+    height: 11vh;
     color: var(--header-color);
     min-height: 90px;
 }
 
-.h1-main{
-    margin-left: 0.6%;
-    font-size: 235%;
+.h1-main {
+    margin-left: 5%;
+    font-size: 285%;
     width: 16%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.search{
-    width: 40%;
+.search {
+    width: 46%;
     height: 3.5vh;
     background-color: rgb(73, 19, 19);
     display: flex;
@@ -50,29 +49,33 @@
 
 }
 
-.input-main-search{
+.input-main-search {
     width: 85%;
     height: 100%;
 }
 
-#search-input{
-    width: 100%; 
-    height: 100%; 
+#search-input {
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     border-radius: 0.3rem 0rem 0rem 0.3rem;
 }
 
-#search-input :focus{
+#search-input :focus {
     border-radius: 0.3rem 0rem 0rem 0.3rem;
 
 }
 
-.input-main-button{
+.input-main-button {
+    display: flex;
+    align-items: center;
     width: 15%;
-    height: 90.5%;
+    height: 90%;
+    margin-top: 0.1%;
+
 }
 
-#search-button{
+#search-button {
     width: 100%;
     height: 100%;
     border: none;
@@ -82,11 +85,11 @@
 
 }
 
-#search-button:hover{
+#search-button:hover {
     background-color: rgb(235, 235, 235);
 }
 
-.ul-header{
+.ul-header {
     display: flex;
     align-items: center;
     list-style: none;
@@ -96,19 +99,19 @@
 
 }
 
-.ul-header li{
+.ul-header li {
     font-size: 160%;
     padding-right: 5%;
 }
 
-.nav-sec{
+.nav-sec {
     display: flex;
     height: 5vh;
     justify-content: center;
     background-color: var(--black);
 }
 
-.ul-sec{
+.ul-sec {
     font-size: 130%;
     width: 95%;
     height: 100%;
@@ -122,3 +125,13 @@
 }
 
 /* BODY */
+
+
+.image-main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.image-main img {
+    height: 85vh;
+}
