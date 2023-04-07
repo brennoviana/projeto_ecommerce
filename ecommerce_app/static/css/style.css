@@ -2,4 +2,123 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto';
 }
+
+:root {
+    --header-color: rgb(255, 255, 255);
+    --black: rgb(0, 0, 0);
+    --white: rgb(255, 255, 255);
+    --black-2: rgb(0, 0, 0);
+  }
+
+
+/* HEADER */
+
+.header-main{
+    background-color: var(--black);
+    min-width: 1700px;
+    min-height: 120px;
+    box-shadow: 0 0 1.5rem;
+}
+
+.nav-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    color: var(--header-color);
+    min-height: 90px;
+}
+
+.h1-main{
+    margin-left: 0.6%;
+    font-size: 235%;
+    width: 16%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search{
+    width: 40%;
+    height: 3.5vh;
+    background-color: rgb(73, 19, 19);
+    display: flex;
+    align-items: center;
+    min-height: 30px;
+
+}
+
+.input-main-search{
+    width: 85%;
+    height: 100%;
+}
+
+#search-input{
+    width: 100%; 
+    height: 100%; 
+    overflow: hidden;
+    border-radius: 0.3rem 0rem 0rem 0.3rem;
+}
+
+#search-input :focus{
+    border-radius: 0.3rem 0rem 0rem 0.3rem;
+
+}
+
+.input-main-button{
+    width: 15%;
+    height: 90.5%;
+}
+
+#search-button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: var(--white);
+    border-radius: 0rem 0.3rem 0.3rem 0rem;
+    cursor: pointer;
+
+}
+
+#search-button:hover{
+    background-color: rgb(235, 235, 235);
+}
+
+.ul-header{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    width: 19%;
+    font-weight: 300;
+
+
+}
+
+.ul-header li{
+    font-size: 160%;
+    padding-right: 5%;
+}
+
+.nav-sec{
+    display: flex;
+    height: 5vh;
+    justify-content: center;
+    background-color: var(--black);
+}
+
+.ul-sec{
+    font-size: 130%;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    color: var(--header-color);
+    list-style: none;
+    justify-content: space-between;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
+
+/* BODY */
