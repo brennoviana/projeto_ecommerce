@@ -1,15 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto';
+    font-family: 'Ubuntu';
 }
+
+ body{
+    background-image: url('../media/back.png');
+    background-size: cover;
+    background-position: center;
+} 
 
 :root {
     --header-color: rgb(255, 255, 255);
     --black: rgb(0, 0, 0);
     --white: rgb(255, 255, 255);
-    --black-2: rgb(0, 0, 0);
+    --red : rgb(255, 44, 44);
+    --card : #282828;
+    --letra-card : #778188;
+    --button-color: #990423;
+    --button-color-2: #FF0036;    
+
 }
 
 
@@ -32,7 +47,7 @@
 
 .h1-main {
     margin-left: 5%;
-    font-size: 285%;
+    font-size: 305%;
     width: 16%;
     display: flex;
     justify-content: center;
@@ -41,7 +56,7 @@
 
 .search {
     width: 46%;
-    height: 3.5vh;
+    height: 4.5vh;
     background-color: rgb(73, 19, 19);
     display: flex;
     align-items: center;
@@ -61,6 +76,10 @@
     border-radius: 0.3rem 0rem 0rem 0.3rem;
 }
 
+#search-input::placeholder{
+    font-size: 120%;
+}
+
 #search-input :focus {
     border-radius: 0.3rem 0rem 0rem 0.3rem;
 
@@ -76,17 +95,18 @@
 }
 
 #search-button {
+    color: var(--white);
     width: 100%;
     height: 100%;
     border: none;
-    background-color: var(--white);
+    background-color: var(--button-color-2);
     border-radius: 0rem 0.3rem 0.3rem 0rem;
     cursor: pointer;
 
 }
 
 #search-button:hover {
-    background-color: rgb(235, 235, 235);
+    background-color: var(--button-color);  
 }
 
 .ul-header {
@@ -95,7 +115,6 @@
     list-style: none;
     width: 19%;
     font-weight: 300;
-
 
 }
 
@@ -112,8 +131,8 @@
 }
 
 .ul-sec {
-    font-size: 130%;
-    width: 95%;
+    font-size: 150%;
+    width: 90%;
     height: 100%;
     display: flex;
     color: var(--header-color);
@@ -126,12 +145,99 @@
 
 /* BODY */
 
+/* CARROSSEL PRINCIPAL */
+
+.h1-body-main{
+    color: var(--header-color);
+    text-align: center;
+    margin: 2% 0;
+}
+
+.span-red{
+    color: var(--red);
+}
 
 .image-main {
-    width: 100%;
+    width: 60%;
     margin: 0 auto;
 }
 
 .image-main img {
-    height: 85vh;
+    height: 65vh;
 }
+
+
+.slick-dots li button:before{
+    color: var(--red) !important;
+    font-size: 0.7rem !important;
+}
+
+/* CARROSSEL SEC */
+
+.cards{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.cards-h1{
+    margin: 5% 0;
+    text-align: center;
+    color: var(--white);
+}
+
+.cards-main{
+   width: 100%;
+   height: 100%;
+}
+
+.card{
+    color: var(--letra-card);
+    height: 53vh !important;
+    margin: 0 0.2%;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--card);
+}
+
+.produto-img{
+    border-radius: 2rem;
+    padding: 5%;
+    width: 100%;
+    height: 55%;
+}
+
+.infos{
+    padding: 2% 5%;
+    color: var(--white);
+}
+
+.infos h4{
+    margin-top: 5%;
+    font-size: 120%;
+}
+
+
+.infos p{
+    margin: 3% 0;
+    color: var(--letra-card);
+    font-weight: bold;
+}
+.input-div{
+    display: flex;
+    justify-content: center;
+}
+
+.button-card{
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    padding: 10% 35%;
+    margin-top: 12%;
+    color: var(--white);
+    background-color: var(--button-color-2);
+}
+
+.button-card:hover{
+    background-color: var(--button-color);
+}
+

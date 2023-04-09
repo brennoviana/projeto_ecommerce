@@ -1,9 +1,51 @@
 {% load static %}
 
-<div class="image-main">
-    <img src="{% static 'media/eld.jpg' %}" alt="Imagem" id="eld">
-    <img src="{% static 'media/img-r4.jpg' %}" alt="Imagem" id="r4">
-    <img src="{% static 'media/god.jpg' %}" alt="Imagem" id="god">
+<div class="body-main">
+    <div class="h1-body">
+        <h1 class="h1-body-main">Jogos mais <span class="span-red">VENDIDOS</span></h1>
+    </div>
+    <div class="image-main">
+        <img src="{% static 'media/eld.jpg' %}" alt="Imagem" id="eld">
+        <img src="{% static 'media/img-r4.jpg' %}" alt="Imagem" id="r4">
+        <img src="{% static 'media/god.jpg' %}" alt="Imagem" id="god">    
+    </div>
+</div>
+
+<div class="cards">
+    <div class="cards-h1">
+        <h1>Produtos mais vistos na <span class="span-red">GAMEHOUSE</span></h1>
+    </div>
+
+    <div class="cards-main">
+        <div class="card">
+            <img src="{% static 'media/teclado.jpg' %}" alt="teclado" class="produto-img">
+            <div class="infos">
+                <h3>Teclado Gamer redragon</h3>
+                <p>Melhor custo beneficio </p>
+                <h4>R$ 199,90</h4>
+                <div class="input-div">
+                    <input type="button" value="Comprar" class="button-card">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'media/ps5.jpg' %}" alt="teclado" class="produto-img">
+            <div class="infos">
+                <h3>Console PlayStation 5</h3>
+                <p>Top 10 mais vendidos</p>
+                <h4>R$ 4199,90</h4>
+                <div class="input-div">
+                    <input type="button" value="Comprar" class="button-card">
+                </div>
+            </div>
+        </div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+
+
+    </div>
 
 </div>
 
