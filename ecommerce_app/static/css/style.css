@@ -147,6 +147,10 @@
 
 /* CARROSSEL PRINCIPAL */
 
+.body-main{
+    min-width: 1370px;
+}
+
 .h1-body-main{
     color: var(--header-color);
     text-align: center;
