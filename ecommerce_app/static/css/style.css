@@ -10,7 +10,7 @@
 }
 
  body{
-    background-image: url('../media/back.png');
+    background-image: url('../media/background/back.png');
     background-size: cover;
     background-position: center;
 } 
@@ -180,6 +180,7 @@
 
 .cards{
     width: 90%;
+    min-width: 1500px;
     margin: 0 auto;
 }
 
