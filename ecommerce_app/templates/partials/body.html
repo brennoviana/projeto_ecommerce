@@ -19,7 +19,7 @@
     <div class="cards-main">
         {% for prod in prods %}
             <div class="card">
-                <img src="{{prod.img_prod}}" alt="teclado" class="produto-img">
+                <img src="{{prod.img_prod.url}}" alt="{{prod.nome_prod}}" class="produto-img">
                 <div class="infos">
                     <h3>{{prod.nome_prod}}</h3>
                     <p>{{prod.texto_prod}}</p>
