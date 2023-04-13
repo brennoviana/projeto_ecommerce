@@ -5,9 +5,9 @@
         <h1 class="h1-body-main">Jogos mais <span class="span-red">VENDIDOS</span></h1>
     </div>
     <div class="image-main">
-        <img src="{% static 'media/main-images/eld.jpg' %}" alt="Imagem" id="eld">
-        <img src="{% static 'media/main-images/img-r4.jpg' %}" alt="Imagem" id="r4">
-        <img src="{% static 'media/main-images/god.jpg' %}" alt="Imagem" id="god">    
+        <img src="{% static 'imgs/main-images/eld.jpg' %}" alt="Imagem" id="eld">
+        <img src="{% static 'imgs/main-images/img-r4.jpg' %}" alt="Imagem" id="r4">
+        <img src="{% static 'imgs/main-images/god.jpg' %}" alt="Imagem" id="god">    
     </div>
 </div>
 
@@ -17,34 +17,19 @@
     </div>
 
     <div class="cards-main">
-        <div class="card">
-            <img src="{% static 'media/prod/teclado.jpg' %}" alt="teclado" class="produto-img">
-            <div class="infos">
-                <h3>Teclado Gamer redragon</h3>
-                <p>Melhor custo beneficio </p>
-                <h4>R$ 199,90</h4>
-                <div class="input-div">
-                    <input type="button" value="Comprar" class="button-card">
+        {% for prod in prods %}
+            <div class="card">
+                <img src="{{prod.img_prod}}" alt="teclado" class="produto-img">
+                <div class="infos">
+                    <h3>{{prod.nome_prod}}</h3>
+                    <p>{{prod.texto_prod}}</p>
+                    <h4>{{prod.preco_prod}}</h4>
+                    <div class="input-div">
+                        <input type="button" value="Comprar" class="button-card">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card">
-            <img src="{% static 'media/prod/ps5.jpg' %}" alt="teclado" class="produto-img">
-            <div class="infos">
-                <h3>Console PlayStation 5</h3>
-                <p>Top 10 mais vendidos</p>
-                <h4>R$ 4199,90</h4>
-                <div class="input-div">
-                    <input type="button" value="Comprar" class="button-card">
-                </div>
-            </div>
-        </div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-
-
+        {% endfor %}
     </div>
 
 </div>
