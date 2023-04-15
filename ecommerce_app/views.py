@@ -3,6 +3,8 @@ from . import models
 from . import forms
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate, login
+from django.contrib import messages
+
 
 from django.views import View
 
@@ -35,7 +37,10 @@ class Login(View):
             if user is not None:
                 login(request, user)
                 return redirect('index')
-
+        else:
+            messages.warning(request, 'Usuário não autorizado')
+            return redirect('login')
+        
 class Logout(View):
     def get(self, request):
         logout(request)
