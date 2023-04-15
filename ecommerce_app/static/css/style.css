@@ -122,6 +122,19 @@
     padding-right: 5%;
 }
 
+.ul-header a{
+    text-decoration: none;
+    color: var(--white);
+}
+
+.ul-header a:hover{
+    color: var(--button-color-2);
+}
+
+.li-login{
+    color: var(--white);
+}
+
 .nav-sec {
     display: flex;
     height: 5vh;

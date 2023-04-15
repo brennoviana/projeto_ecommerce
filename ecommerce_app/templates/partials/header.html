@@ -1,4 +1,4 @@
-<body>
+﻿<body>
 <header class="header-main">
     <nav class="nav-main">
         <h1 class="h1-main">GAME<span class="span-red">HOUSE</span>&nbsp;<span class="span-red"><i class="fa-sharp fa-solid fa-dice"></i></span></h1>
@@ -11,9 +11,15 @@
             </div>
         </div>
         <ul class="ul-header">
-            <li><i class="fa-regular fa-user"></i>&nbsp;&nbsp;Login</li>
+            {% if not user.is_authenticated %}
+                <li><a href="{% url 'login' %}"><i class="fa-regular fa-user"></i>&nbsp;&nbsp;Login</a></li>
+                <li>Cadastre-se</li>
+            {% else %}
+                <li>Olá,</li>
+                <li class="li-login">{{user.first_name}}</li>
+                <li><a href="{% url 'logout' %}">Sair</a></li>
+            {% endif %}
             <li> | </li>
-            <li>Cadastre-se</li>
             <li><span class="span-red"><i class="fa-solid fa-cart-shopping"></i></span></li>
         </ul>
     </nav>
