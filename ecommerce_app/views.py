@@ -10,10 +10,5 @@ def index(request):
         "home" : "Home"
         }
     
-    return render(request, 'main/index.html', prods_dic)
+    return render(request, 'pages/index.html', prods_dic)
 
-
-def login(request):
-    if request.method == 'POST':
-        form = AuthenticationForm()
-        
