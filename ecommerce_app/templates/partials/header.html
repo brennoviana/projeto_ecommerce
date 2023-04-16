@@ -2,22 +2,7 @@
 <header class="header-main">
     <nav class="nav-main">
         <h1 class="h1-main">GAME<span class="span-red">HOUSE</span>&nbsp;<span class="span-red"><i class="fa-sharp fa-solid fa-dice"></i></span></h1>
-        <div class="search">
-            <div class="input-main-search">
-                <form action="get" class="form-search">
-                    {% csrf_token %}
-                    <input type="text" name="search" id="search-input" placeholder="    Pesquise por produtos ou marcas">
-                </form>
-                {% if prods2 %}
-                    <ul>
-                        <li class="li-prod"></li>
-                    <ul>
-                {% endif %}
-            </div>
-            <div class="input-main-button">
-                <button type="button" value="SEARCH" id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
-        </div>
+        {% include "partials/search.html" %}
         <ul class="ul-header">
             {% if not user.is_authenticated %}
                 <li><a href="{% url 'login' %}"><i class="fa-regular fa-user"></i>&nbsp;&nbsp;Login</a></li>

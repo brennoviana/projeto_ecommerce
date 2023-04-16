@@ -20,9 +20,11 @@ $(document).ready(function(){
   });
 
 const form =  document.querySelector("#search-input");
-const li = document.querySelector(".li-prod")
-
+const search = document.querySelector(".search")
 form.addEventListener("input", function(event){
+	event.preventDefault()
+	console.log("aqui")
+
 	const formSearch = document.querySelector('.form-search');
   	const formData = new FormData(formSearch);
   	const csrfToken = formData.get('csrfmiddlewaretoken');
@@ -38,8 +40,8 @@ form.addEventListener("input", function(event){
   	  body: JSON.stringify({
   	    'querry': form.value,
   	  }),
-	}).then(data =>{
-		console.log(data.body)
-		// li.innerHTML = JSON.parse(data)
-	})
+	}).then(response => response.json())
+	.then(data => {
+		search.innerHTML = data.html_results;
+	});
 })	
