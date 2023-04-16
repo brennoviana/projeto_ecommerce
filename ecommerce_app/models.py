@@ -11,7 +11,7 @@ class prod(models.Model):
         ("C", "Computadore"),
         ("CON", "Console"),
         ("M", "Monitore"),
-        ("P", "Peça"),
+        ("P", "Peças"),
     )
     name_prod = models.CharField(max_length=50)
     text_prod = models.TextField(max_length=200)

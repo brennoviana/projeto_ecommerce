@@ -1,9 +1,12 @@
-from django.shortcuts import render, redirect
+﻿from django.shortcuts import render, redirect, HttpResponse
 from . import models
 from . import forms
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+import json
+from django.http import JsonResponse
+from django.template.loader import render_to_string
 
 
 from django.views import View
@@ -38,10 +41,17 @@ class Login(View):
                 login(request, user)
                 return redirect('index')
         else:
-            messages.warning(request, 'Usuário não autorizado')
+            messages.warning(request, 'UsuÃ¡rio nÃ£o autorizado')
             return redirect('login')
         
 class Logout(View):
     def get(self, request):
         logout(request)
         return redirect("index")
+
+class SearchProd(View):
+    def post(self, request):
+        q = json.loads(request.body)
+        prods2 = models.prod.objects.filter(name_prod__icontains=q.get("querry")) if q else models.prod.objects.all()
+        html_results = render_to_string('pages/index.html', {'prods': prods2})
+        return JsonResponse({'html_results': html_results})

@@ -53,6 +53,10 @@
     align-items: center;
 }
 
+.form-search{
+    height: 4.5vh;
+}
+
 .search {
     width: 46%;
     height: 4.5vh;
