@@ -1,14 +1,6 @@
- <div class="search">
-    <div class="input-main-search">
-        <form action="get" class="form-search">
-            {% csrf_token %}
-            <input type="text" name="search" id="search-input" placeholder="    Pesquise por produtos ou marcas">
-        </form>
-        {% for prod in prods2 %}
-            <li style="color:white;" class="li-prod">{{prod.name_prod}}</li>
-        {% endfor %}
-    </div>
-    <div class="input-main-button">
-        <button type="button" value="SEARCH" id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </div>
-</div>
+<ul>
+
+    {% for prod in prods2 %}
+    <li style="color:white;" class="li-prod">{{prod.name_prod}}</li>
+    {% endfor %}
+</ul>

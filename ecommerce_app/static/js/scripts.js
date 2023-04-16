@@ -20,7 +20,7 @@ $(document).ready(function(){
   });
 
 const form =  document.querySelector("#search-input");
-const search = document.querySelector(".search")
+const search = document.querySelector(".prod-search")
 form.addEventListener("input", function(event){
 	event.preventDefault()
 	console.log("aqui")
