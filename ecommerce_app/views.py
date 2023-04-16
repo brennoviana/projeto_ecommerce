@@ -12,7 +12,7 @@ class Index(View):
     template_name = 'pages/index.html'
     def get(self, request):
 
-        prods = models.produto.objects.all()
+        prods = models.prod.objects.all().order_by('-created_at')
         prods_dic = {
             "prods" : prods,
             "home" : "Home"
