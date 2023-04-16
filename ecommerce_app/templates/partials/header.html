@@ -17,6 +17,7 @@
             {% else %}
                 <li>Olá,</li>
                 <li class="li-login">{{user.first_name}}</li>
+                <li> | </li>
                 <li><a href="{% url 'logout' %}">Sair</a></li>
             {% endif %}
             <li> | </li>
