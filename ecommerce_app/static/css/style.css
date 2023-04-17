@@ -112,6 +112,18 @@
     background-color: var(--button-color);  
 }
 
+.prod-search{
+}
+
+.ul-search-prod{
+    background-color: var(--white);
+    border-radius: 0 0 0.4rem 0.4rem;
+}
+
+.li-prod{
+    color: var(--black);
+}
+
 .ul-header {
     display: flex;
     align-items: center;

@@ -8,8 +8,6 @@ $(document).ready(function(){
     });
   });
 
-
-
   $(document).ready(function(){
     $('.cards-main').slick({
       dots: true,
@@ -23,7 +21,6 @@ const form =  document.querySelector("#search-input");
 const search = document.querySelector(".prod-search")
 form.addEventListener("input", function(event){
 	event.preventDefault()
-	console.log("aqui")
 
 	const formSearch = document.querySelector('.form-search');
   	const formData = new FormData(formSearch);
@@ -32,6 +29,7 @@ form.addEventListener("input", function(event){
   	formData.append('csrfmiddlewaretoken', csrfToken);
 
  	url = "/searchForm/";
+	console.log("aqui");
   	fetch(url, {
   	  method: 'POST',
   	  headers: {
@@ -45,3 +43,13 @@ form.addEventListener("input", function(event){
 		search.innerHTML = data.html_results;
 	});
 })	
+
+window.addEventListener("click", function(event){
+	if (event.target != form){
+		search.style.display = "none"	
+	}
+	form.addEventListener("click", function(event){
+		search.style.display = "block"	
+	
+	})
+})

@@ -53,7 +53,9 @@ class Logout(View):
 class SearchProd(View):
     def post(self, request):
         q = json.loads(request.body)
-        prods2 = models.prod.objects.filter(name_prod__icontains=q.get("querry")) if q else models.prod.objects.all()
-        print(prods2)
+        if q.get("querry") == "":
+            html_results = render_to_string('partials/search.html')    
+            return JsonResponse({'html_results': html_results})
+        prods2 = models.prod.objects.filter(name_prod__icontains=q.get("querry"))[:10]
         html_results = render_to_string('partials/search.html', {'prods2': prods2, 'request': request})
         return JsonResponse({'html_results': html_results})
