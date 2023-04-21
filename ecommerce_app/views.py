@@ -8,20 +8,13 @@ import json
 from django.http import JsonResponse
 from django.template.loader import render_to_string
 from django.template import RequestContext
-
-
 from django.views import View
 
 class Index(View):
     template_name = 'pages/index.html'
     def get(self, request):
-
         prods = models.prod.objects.all().order_by('-created_at')
-        prods_dic = {
-            "prods" : prods,
-            "home" : "Home"
-            }
-
+        prods_dic = {"prods" : prods}
         return render(request, self.template_name, prods_dic)
 
 class Login(View):
@@ -59,3 +52,11 @@ class SearchProd(View):
         prods2 = models.prod.objects.filter(name_prod__icontains=q.get("querry"))[:10]
         html_results = render_to_string('partials/search.html', {'prods2': prods2, 'request': request})
         return JsonResponse({'html_results': html_results})
+    
+
+class ProdView(View):
+    template_name = 'pages/prod.html'
+    def get(self, request, prod_id):
+        produto = models.prod.objects.filter(id=prod_id)
+        prod = {"produto" : produto}
+        return render(request, self.template_name, prod)

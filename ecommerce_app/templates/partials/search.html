@@ -1,5 +1,5 @@
 <ul class="ul-search-prod">
     {% for prod in prods2 %}
-        <li class="li-prod"><a href="">{{prod.name_prod}}</a></li>
+        <li class="li-prod"><a href="{% url 'prodSearch' prod.id %}">{{prod.name_prod}}</a></li>
     {% endfor %}
 </ul>

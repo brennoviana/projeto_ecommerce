@@ -25,7 +25,7 @@
                     <p>{{prod.text_prod}}</p>
                     <h4>{{prod.price_prod}}</h4>
                     <div class="input-div">
-                        <input type="button" value="Comprar" class="button-card">
+                        <a href="{% url 'prodSearch' prod.id %}" class="button-card">Comprar</a>
                     </div>
                 </div>
             </div>

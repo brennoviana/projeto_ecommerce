@@ -274,6 +274,7 @@
     margin-top: 12%;
     color: var(--white);
     background-color: var(--button-color-2);
+    text-decoration: none;
 }
 
 .button-card:hover{
