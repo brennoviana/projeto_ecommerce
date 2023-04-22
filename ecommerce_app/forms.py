@@ -1,4 +1,14 @@
 from django.contrib.auth.forms import AuthenticationForm
+from django import forms
+from django.forms import ModelForm
+from . import models
 
 class LoginForm(AuthenticationForm):
-    pass
+    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+
+
+class ProdForm(ModelForm):
+    class Meta:
+        model = models.prod
+        fields = '__all__'

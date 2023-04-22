@@ -5,22 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    {% load crispy_forms_tags %}
-
+    {% load static %}
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
 </head>
-<body>
-
-    <form method="post">
-         {% csrf_token %}
-             {{ form|crispy }}
-        <input type="submit" value="enviar">
-    </form>
-    {% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}" role="alert">
-          <span>{{ message }}</span>
+<body class="body-login">
+    <div class="div-login">
+        <div class="form-login">
+            <h1 class="h1-login">
+                Faça seu login aqui
+            </h1>
+            <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    <p class="field-form">{{ field.label }}</p>
+                    {{ field }}
+                {% endfor %}
+                <input type="submit" value="Login" class="input-form">
+            </form>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" role="alert">
+                <span>{{ message }}</span>
+            </div>
+            {% endfor %}
+            {% endif %}
         </div>
-    {% endfor %}
-{% endif %}
-</body>
+    </div>
+    </body>
 </html>

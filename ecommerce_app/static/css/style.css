@@ -9,7 +9,7 @@
     font-family: 'Ubuntu';
 }
 
- body{
+.body-index{
     background-image: url('../imgs/background/back.png');
     background-size: cover;
     background-position: center;
@@ -75,24 +75,26 @@
 #search-input {
     width: 100%;
     height: 100%;
+    padding-left: 2.5%;
     overflow: hidden;
-    border-radius: 0.3rem 0rem 0rem 0.3rem;
+    border: none;
+    font-size: 110%;
 }
 
 #search-input::placeholder{
-    font-size: 120%;
+    font-size: 100%;
+    margin-left: 5%;
 }
 
-#search-input :focus {
-    border-radius: 0.3rem 0rem 0rem 0.3rem;
-
+#search-input:focus {
+    outline: none;
 }
 
 .input-main-button {
     display: flex;
     align-items: center;
     width: 15%;
-    height: 90%;
+    height: 100%;
     margin-top: 0.1%;
 
 }
@@ -116,18 +118,26 @@
     position: relative;
     background-color: var(--white);
     border-radius: 0 0 0.4rem 0.4rem;
+    overflow: hidden;
 }
 
 .li-prod{
     color: var(--black);
-    padding: 0.8% 0;
-    margin-left: 1%;
+    padding: 0.8% 0.4%;
     list-style: none;
+
 }
 
 .li-prod a{
     text-decoration: none;
+    width: 100%;
+    display: block;
     color: var(--black);
+}
+
+.li-prod:hover{
+    background-color: var(--letra-card);
+    cursor: pointer;
 }
 
 .ul-header {
@@ -306,3 +316,49 @@
     background-color: #f8d7da;
     border-color: #f5c6cb;
   }
+
+/* LOGIN */
+
+.body-login{
+    background-color: var(--card);
+}
+
+.h1-login{
+    margin-bottom: 15%;
+    color: var(--white);
+}
+
+.div-login{
+    width: 25%;
+    height: 50vh;
+    margin: 12% auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+}
+
+.form-control{
+    margin-top: 5%;
+    display: block;
+    width: 100%;
+    height: 3.5vh;
+}
+
+.field-form{
+    margin-top: 3%;
+    color: var(--white);
+}
+
+.input-form{
+    margin-top: 10%;
+    width: 100%;
+    height: 3.5vh;
+    background-color: var(--button-color-2);
+    border: none;
+    cursor: pointer;
+}
+
+.input-form:hover{
+    background-color: var(--button-color);
+}

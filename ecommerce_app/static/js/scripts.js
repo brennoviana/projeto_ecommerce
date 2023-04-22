@@ -18,8 +18,8 @@ $(document).ready(function(){
   });
 
 const form =  document.querySelector("#search-input");
+const search = document.querySelector(".prod-search")
 form.addEventListener("input", function(event){
-	const search = document.querySelector(".prod-search")
 	event.preventDefault()
 
 	const formSearch = document.querySelector('.form-search');

@@ -1,4 +1,4 @@
-<body>
+<body class="body-index">
 <header class="header-main">
     <nav class="nav-main">
         <h1 class="h1-main">GAME<span class="span-red">HOUSE</span>&nbsp;<span class="span-red"><i class="fa-sharp fa-solid fa-dice"></i></span></h1>
@@ -6,7 +6,7 @@
             <div class="input-main-search">
                 <form action="get" class="form-search">
                     {% csrf_token %}
-                    <input type="text" name="search" id="search-input" placeholder="    Pesquise por produtos ou marcas">
+                    <input type="text" name="search" id="search-input" placeholder=" Pesquise por produtos ou marcas">
                 </form>
                 <div class="prod-search">
                     {% include "partials/search.html" %}
@@ -20,14 +20,22 @@
             {% if not user.is_authenticated %}
                 <li><a href="{% url 'login' %}"><i class="fa-regular fa-user"></i>&nbsp;&nbsp;Login</a></li>
                 <li>Cadastre-se</li>
+                <li><span class="span-red"><i class="fa-solid fa-cart-shopping"></i></span></li>
+            {% elif user.is_staff %}
+                <li>Olá,</li>
+                <li class="li-login">{{user.first_name}}</li>
+                <li> | </li>
+                <li><a href="{% url 'logout' %}">Sair</a></li>
+                <li> | </li>
+                <li><a href="{% url 'estoque' %}">Estoque</a></li>
             {% else %}
                 <li>Olá,</li>
                 <li class="li-login">{{user.first_name}}</li>
                 <li> | </li>
                 <li><a href="{% url 'logout' %}">Sair</a></li>
+                <li> | </li>
+                <li><span class="span-red"><i class="fa-solid fa-cart-shopping"></i></span></li>
             {% endif %}
-            <li> | </li>
-            <li><span class="span-red"><i class="fa-solid fa-cart-shopping"></i></span></li>
         </ul>
     </nav>
     <nav class="nav-sec">
@@ -38,7 +46,7 @@
             <li>Computadores</li>
             <li>Consoles</li>
             <li>Monitores</li>
-            <li>PeÃ§as</li>
+            <li>Peças</li>
         </ul>
     </nav>
 </header>

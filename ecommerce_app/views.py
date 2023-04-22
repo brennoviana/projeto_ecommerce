@@ -19,7 +19,7 @@ class Index(View):
 
 class Login(View):
     template_name = 'pages/login.html'
-    form = forms.LoginForm()
+    form = forms.LoginForm
     context = {"form" : form}
 
     def get(self, request):
@@ -60,3 +60,15 @@ class ProdView(View):
         produto = models.prod.objects.filter(id=prod_id)
         prod = {"produto" : produto}
         return render(request, self.template_name, prod)
+    
+class Estoque(View):
+    def get(self, request):
+        prodForm = forms.ProdForm
+        return render(request, 'pages/estoque.html', {"form" : prodForm})
+    
+    def post(self, request):
+        prodForm = forms.ProdForm(request.POST)
+        if prodForm.is_valid():
+            prod = models.prod(name_prod=prodForm.cleaned_data["name_prod"])
+            prod.save()
+        return redirect('estoque')
