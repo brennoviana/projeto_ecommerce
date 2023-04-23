@@ -67,8 +67,7 @@ class Estoque(View):
         return render(request, 'pages/estoque.html', {"form" : prodForm})
     
     def post(self, request):
-        prodForm = forms.ProdForm(request.POST)
+        prodForm = forms.ProdForm(request.POST, request.FILES)
         if prodForm.is_valid():
-            prod = models.prod(name_prod=prodForm.cleaned_data["name_prod"])
-            prod.save()
+            prodForm.save()
         return redirect('estoque')
